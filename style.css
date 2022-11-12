@@ -1,0 +1,146 @@
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    font-size: 1rem;
+    line-height: 1rem;
+}
+
+.hero{
+    background: url('./bgg.jpg') center/cover no-repeat;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    
+}
+
+.banner{
+   display: grid;
+    background: white;
+    text-align: center;
+    max-width: 620px;
+    padding: 4rem 0;
+    width: 90vw;
+    box-shadow: 0 5px 25px rgb(245, 5, 5);
+    border-radius: 20px;
+}
+
+
+
+.modal-btn:hover{
+    background: transparent;
+    color: crimson;
+}
+
+.btn{
+    text-transform: uppercase;
+    background: transparent;
+    color: black;
+    padding: 0.4rem 0.1rem;
+    letter-spacing: 0.4rem;
+    display: inline-block;
+    transition: all 0.3s linear;
+    font-size: 0.9rem;
+    border: 2px solid black;
+    cursor: pointer;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 2);
+    border-radius: 0.5rem;
+}
+
+.btn:hover{
+    color: white;
+    background: black;
+}
+
+.modal-btn{
+    text-align: center;
+    background: rgb(0, 204, 255);
+    border-color: rgb(212, 212, 205);
+    color: rgb(37, 43, 39);
+    margin: 2rem auto; 
+}
+
+.modal-overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(73, 166, 233, 0.5);
+    display: grid;
+    place-items: center;
+    transition: all 0.2s linear;
+    visibility: hidden;
+    z-index: -10;
+}
+
+.modal-container{
+    background: white;
+    border-radius: 0.5rem;
+    width: 90vw;
+    height: 32vh;
+    max-width: 620px;
+    text-align: center;
+    display: grid;
+    place-items: center;
+    position: relative;
+}
+
+.close-btn{
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 2rem;
+    background: transparent;
+    border-color: transparent;
+    color: darkred;
+    cursor: pointer;
+    transition: all 0.2s linear;
+
+}
+
+@media screen and (min-width:800px){
+    h1{
+        font-size: 3.5rem;
+    }
+    h3{
+        font-size: 2rem;
+    }
+
+    h1, h3{
+        line-height: 0.3;
+    }
+}
+
+@media screen and (max-width:700px){
+
+.banner{
+    width: 70vw;
+}
+}
+
+
+.close-btn:hover{
+    color: red;
+    /* to like zoom in */
+    transform: scale(1.3);
+}
+
+/* to show box overlay that is hidden. we add a  class to reveal the overlay and add it in JS */
+
+.open-modal{
+    visibility: visible;
+    /* The z-index property specifies the stack order of an element.
+
+An element with greater stack order is always in front of an element with a lower stack order.
+
+Note: z-index only works on positioned elements (position: absolute, position: relative, position: fixed, or position: sticky) and flex items (elements that are direct children of display:flex elements). */
+    z-index: 10;
+}
